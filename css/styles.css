@@ -1,0 +1,96 @@
+.main-header {
+  height: 8.4rem;
+  background-color: rgb(26, 30, 31);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border-bottom: 6px solid rgba(43, 43, 43, 0.6);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header-tbc-logo {
+  width: 18.2rem;
+}
+
+.main-nav-list {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  list-style: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.5s;
+  color: rgb(170, 170, 170);
+
+  font: var(--font_9);
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: rgb(0, 163, 224);
+}
+
+.selected-link {
+  color: rgb(0, 163, 224) !important;
+}
+
+.section-about {
+  background-color: rgb(43, 43, 43);
+}
+
+.background-img-container {
+  height: 35.2rem;
+  background-image: url(../img/background-img/team-pic.webp);
+  background-size: cover;
+  display: flex;
+}
+
+.container-slogan {
+  width: 98rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(244, 244, 244);
+}
+
+.slogan-name {
+  font-size: 4.2rem;
+}
+.slogan-text {
+  font-size: 3.4rem;
+  margin-top: 4rem;
+}
+
+.about-text {
+  color: rgb(244, 244, 244);
+  line-height: 44.8px;
+  font: var(--font_5);
+  letter-spacing: normal;
+  margin-top: 5.6rem;
+  margin-bottom: 4.3rem;
+}
+
+.about-btn:link,
+.about-btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.5s;
+  color: rgb(0, 163, 224);
+  font: var(--font_9);
+}
+
+.about-btn:hover,
+.about-btn:active {
+  color: rgb(170, 170, 170);
+}

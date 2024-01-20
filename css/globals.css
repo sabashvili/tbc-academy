@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1";
+  src: url("../fonts/wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "wfont_643d94_93c16d86ec9d47d0a2a36894fbdd54fd";
+  src: url("../fonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd.woff2") format("woff2");
+}
+@font-face {
+  font-family: "wfont_643d94_f52303b2efea42e1b4aeed119e42672e";
+  src: url("../fonts/643d94_f52303b2efea42e1b4aeed119e42672e.woff2") format("woff2");
+}
+
+:root {
+  --fnt: var(--font_9);
+
+  --font_0: normal normal normal 24px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+
+  --font_2: normal normal normal 20px/1.6em wfont_643d94_93c16d86ec9d47d0a2a36894fbdd54fd, wf_93c16d86ec9d47d0a2a36894f, orig_tbc_x_medium;
+  --font_3: normal normal normal 48px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+  --font_4: normal normal normal 32px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+  --font_5: normal normal normal 28px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+  --font_6: normal normal normal 24px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+  --font_7: normal normal normal 18px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+  --font_8: normal normal normal 16px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+  --font_9: normal normal normal 14px/1.6em wfont_643d94_dd28b3957391427eb54de1c9eff7cfb1, wf_dd28b3957391427eb54de1c9e, orig_tbc_x_regular;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  max-width: 98rem;
+  margin: 0 auto;
+}
