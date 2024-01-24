@@ -41,3 +41,32 @@ function resetInterval() {
 
 showSlide(currentSlide);
 intervalId = setInterval(nextSlide, intervalTime);
+
+document.getElementById("question1").addEventListener("click", function () {
+  toggleAnswer("answer1");
+});
+
+document.getElementById("question2").addEventListener("click", function () {
+  toggleAnswer("answer2");
+});
+
+document.getElementById("question3").addEventListener("click", function () {
+  toggleAnswer("answer3");
+});
+
+function toggleAnswer(answerId) {
+  let answer = document.getElementById(answerId);
+
+  let allAnswers = document.querySelectorAll(".asked-question-answer");
+  allAnswers.forEach((el) => {
+    if (el.id !== answerId) {
+      el.classList.remove("visible");
+    }
+  });
+
+  if (answer.classList.contains("visible")) {
+    answer.classList.remove("visible");
+  } else {
+    answer.classList.add("visible");
+  }
+}

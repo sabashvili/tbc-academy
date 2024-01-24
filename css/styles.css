@@ -84,20 +84,6 @@
   margin-bottom: 4.3rem;
 }
 
-.about-btn:link,
-.about-btn:visited {
-  display: inline-block;
-  text-decoration: none;
-  transition: all 0.5s;
-  color: rgb(0, 163, 224);
-  font: var(--font_2);
-}
-
-.about-btn:hover,
-.about-btn:active {
-  color: rgb(170, 170, 170);
-}
-
 .section-courses {
   padding: 3.4rem 0 5.8rem 0;
   background-color: rgb(22, 22, 22);
@@ -213,4 +199,114 @@
   display: inline-block;
   cursor: pointer;
   border: none;
+}
+
+.section-asked-question {
+  background-color: rgb(22, 22, 22);
+  padding: 10.5rem 0 7.5rem 0;
+}
+
+.question-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.question-item {
+  padding: 2.7rem 0 2.7rem 0;
+  border-bottom: 1px solid rgb(53, 49, 49);
+  cursor: pointer;
+}
+
+.question-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question {
+  font: var(--font_7);
+  color: rgb(244, 244, 244);
+}
+
+.asked-question-container {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.asked-question-answer {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.answer {
+  font: var(--font_7);
+  color: rgb(244, 244, 244);
+  font-size: 1.4rem;
+  padding: 3.7rem 0 1.3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.answer-steps {
+  padding: 0 0 0 2.1rem;
+  line-height: 2.8rem;
+}
+
+.footer {
+  background-color: #1a1e1f;
+  padding: 6.4rem 0 4.3rem 0;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.8rem;
+  justify-content: space-between;
+}
+
+.social-network {
+  justify-self: end;
+  display: flex;
+  gap: 1rem;
+}
+
+.copyright-text {
+  font: var(--font_7);
+  color: rgb(244, 244, 244);
+  font-size: 1.4rem;
+}
+
+.copyright-rules {
+  font: var(--font_7);
+  color: rgb(244, 244, 244);
+  font-size: 1.4rem;
+  grid-column: 1;
+  align-self: center;
+}
+
+.send-email-btn:link,
+.send-email-btn:visited {
+  background-color: rgb(0, 174, 243);
+  border: none;
+  border-radius: 6px;
+  padding: 0.67rem 3.2rem;
+  justify-self: end;
+  font: var(--font_7);
+  color: rgb(244, 244, 244);
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.send-email-btn:hover,
+.send-email-btn:active {
+  background-color: #d5d5d5;
+  color: #767474;
 }

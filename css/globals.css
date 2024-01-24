@@ -82,3 +82,17 @@ html {
   max-width: 98rem;
   margin: 0 auto;
 }
+
+.blue-btn:link,
+.blue-btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.5s;
+  color: rgb(0, 163, 224);
+  font: var(--font_2);
+}
+
+.blue-btn:hover,
+.blue-btn:active {
+  color: rgb(170, 170, 170);
+}
