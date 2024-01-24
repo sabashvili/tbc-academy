@@ -97,3 +97,55 @@
 .about-btn:active {
   color: rgb(170, 170, 170);
 }
+
+.section-courses {
+  padding: 3.4rem 0 5.8rem 0;
+  background-color: rgb(22, 22, 22);
+}
+
+.section-header {
+  font: var(--font_0);
+  color: #dbdbdb;
+}
+
+.courses-list {
+  margin-top: 6.7rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  row-gap: 2.5rem;
+  column-gap: 3.7rem;
+}
+
+.course-item {
+  border: 1px solid rgba(85, 85, 85, 1);
+  height: 41.4rem;
+  position: relative;
+}
+
+.course-information {
+  padding: 0 2rem 0 2.2rem;
+}
+
+.course-header {
+  font: var(--font_7);
+  color: rgb(244, 244, 244);
+  margin-top: 3.4rem;
+}
+
+.course-about {
+  margin-top: 2.5rem;
+  font: var(--font_9);
+  color: rgb(244, 244, 244);
+}
+
+.course-detail-btn {
+  position: absolute;
+  bottom: 2.1rem;
+  color: #00aeef;
+  font: var(--font_8);
+  text-decoration: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
