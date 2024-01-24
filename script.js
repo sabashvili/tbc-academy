@@ -70,3 +70,16 @@ function toggleAnswer(answerId) {
     answer.classList.add("visible");
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".main-header");
+
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      header.classList.add("fixed-header");
+    } else {
+      header.classList.remove("fixed-header");
+    }
+  }
+  window.addEventListener("scroll", handleScroll);
+});
