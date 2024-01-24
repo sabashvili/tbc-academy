@@ -2,16 +2,16 @@
   height: 8.4rem;
   background-color: rgb(26, 30, 31);
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
-  border-bottom: 6px solid rgba(43, 43, 43, 0.6);
+  /* border-bottom: 6px solid rgba(43, 43, 43, 0.6); */
 }
 
 .header-container {
+  width: 98rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .header-tbc-logo {
@@ -30,7 +30,7 @@
   display: inline-block;
   text-decoration: none;
   transition: all 0.5s;
-  color: rgb(170, 170, 170);
+  color: rgb(244, 244, 244);
 
   font: var(--font_9);
 }
@@ -46,12 +46,15 @@
 
 .section-about {
   background-color: rgb(43, 43, 43);
+  padding-bottom: 5.6rem;
 }
 
 .background-img-container {
   height: 35.2rem;
   background-image: url(../img/background-img/team-pic.webp);
   background-size: cover;
+
+  background-position: 50% 50%;
   display: flex;
 }
 
@@ -68,8 +71,8 @@
   font-size: 4.2rem;
 }
 .slogan-text {
+  margin-top: 2.5rem;
   font-size: 3.4rem;
-  margin-top: 4rem;
 }
 
 .about-text {
@@ -87,7 +90,7 @@
   text-decoration: none;
   transition: all 0.5s;
   color: rgb(0, 163, 224);
-  font: var(--font_9);
+  font: var(--font_2);
 }
 
 .about-btn:hover,
