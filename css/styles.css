@@ -7,8 +7,7 @@
   background-color: rgb(26, 30, 31);
   display: flex;
   justify-content: center;
-
-  /* border-bottom: 6px solid rgba(43, 43, 43, 0.6); */
+  z-index: 999;
 }
 
 .header-container {
@@ -261,7 +260,11 @@
 }
 
 .visible {
-  display: block;
+  display: block !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .answer {
@@ -307,7 +310,6 @@
   font: var(--font_7);
   color: rgb(244, 244, 244);
   font-size: 1.4rem;
-  grid-column: 1;
   align-self: center;
 }
 
@@ -328,4 +330,73 @@
 .send-email-btn:active {
   background-color: #d5d5d5;
   color: #767474;
+}
+
+.copyright-btn {
+  grid-column: 1;
+  justify-self: start;
+  display: inline-block;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.copyright-btn :hover {
+  color: rgb(128, 128, 128);
+}
+
+.rights {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(43, 43, 43);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 68.6rem;
+  height: 100vh;
+  padding: 0 6.05rem;
+  overflow-y: scroll;
+}
+
+.rights h1 {
+  font: var(--font_8);
+  color: rgb(244, 244, 244);
+  font-size: 2.2rem;
+}
+
+.rights p {
+  font: var(--font_8);
+  color: rgb(244, 244, 244);
+  font-size: 1.4rem;
+}
+
+.rights h2 {
+  font: var(--font_8);
+  color: rgb(244, 244, 244);
+  font-size: 1.6rem;
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 1001;
+}
+
+.close-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: rgb(244, 244, 244);
+}
+
+.close-btn {
+  display: inline-block;
+  border: none;
+  background-color: inherit;
+  text-align: end;
+  cursor: pointer;
 }

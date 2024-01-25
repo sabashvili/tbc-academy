@@ -1,12 +1,27 @@
+const rightsBtn = document.getElementById("rights-btn");
+const rights = document.querySelector(".rights");
+const slides = document.querySelectorAll(".slider-item");
+const overlay = document.querySelector(".overlay");
+const rightsCloseBtn = document.querySelector(".close-btn");
+
 document.getElementById("prevBtn").addEventListener("click", prevSlide);
 document.getElementById("nextBtn").addEventListener("click", nextSlide);
 document.getElementById("page1Btn").addEventListener("click", () => gotoPage(0));
 document.getElementById("page2Btn").addEventListener("click", () => gotoPage(1));
 document.getElementById("page3Btn").addEventListener("click", () => gotoPage(2));
+document.getElementById("question1").addEventListener("click", function () {
+  toggleAnswer("answer1");
+});
+document.getElementById("question2").addEventListener("click", function () {
+  toggleAnswer("answer2");
+});
+document.getElementById("question3").addEventListener("click", function () {
+  toggleAnswer("answer3");
+});
+rightsBtn.addEventListener("click", () => toggleRight());
 
 let currentSlide = 0;
-const slides = document.querySelectorAll(".slider-item");
-const intervalTime = 3000; // 3 seconds
+const intervalTime = 3000;
 let intervalId;
 
 function showSlide(index) {
@@ -42,18 +57,6 @@ function resetInterval() {
 showSlide(currentSlide);
 intervalId = setInterval(nextSlide, intervalTime);
 
-document.getElementById("question1").addEventListener("click", function () {
-  toggleAnswer("answer1");
-});
-
-document.getElementById("question2").addEventListener("click", function () {
-  toggleAnswer("answer2");
-});
-
-document.getElementById("question3").addEventListener("click", function () {
-  toggleAnswer("answer3");
-});
-
 function toggleAnswer(answerId) {
   let answer = document.getElementById(answerId);
 
@@ -82,4 +85,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   window.addEventListener("scroll", handleScroll);
+});
+
+const toggleRight = () => {
+  overlay.classList.toggle("hidden");
+};
+
+const closeRightsBar = (e) => {
+  if (!rightsBtn.contains(e.target) && !rights.contains(e.target)) {
+    if (!overlay.classList.contains("hidden")) {
+      overlay.classList.add("hidden");
+    }
+  }
+};
+
+document.addEventListener("click", closeRightsBar);
+
+rightsCloseBtn.addEventListener("click", () => {
+  overlay.classList.add("hidden");
 });
