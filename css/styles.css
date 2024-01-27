@@ -85,6 +85,7 @@
 .slogan-text {
   margin-top: 2.5rem;
   font-size: 3.4rem;
+  line-height: 1.5;
 }
 
 .about-text {
@@ -399,4 +400,159 @@
   background-color: inherit;
   text-align: end;
   cursor: pointer;
+}
+
+.btn-mobile-nav {
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+  position: absolute;
+  width: 2.6rem;
+  height: 2.6rem;
+  top: 2rem;
+  right: 2rem;
+  z-index: 2000;
+}
+
+.btn-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 82em) {
+  .left-arrow-btn {
+    left: 5rem;
+  }
+
+  .right-arrow-btn {
+    right: 5rem;
+  }
+}
+@media (max-width: 75em) {
+  .left-arrow-btn {
+    left: 3rem;
+  }
+
+  .right-arrow-btn {
+    right: 3rem;
+  }
+}
+
+@media (max-width: 72em) {
+  .slider-item {
+    flex-direction: column;
+    height: 32rem;
+  }
+
+  .left-arrow-btn {
+    left: 5rem;
+  }
+
+  .right-arrow-btn {
+    right: 5rem;
+  }
+}
+
+@media (max-width: 66em) {
+  .courses-list {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 12.5rem;
+    column-gap: 6rem;
+  }
+
+  .container {
+    padding: 0 3rem;
+  }
+
+  .header-container {
+    padding: 0 3rem;
+  }
+
+  .container-slogan {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .courses-list {
+    padding: 0 13rem;
+  }
+}
+
+@media (max-width: 61.25em) {
+  .course-img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .courses-list {
+    padding: 10rem;
+  }
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: rgba(43, 43, 43);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    padding-right: 1rem;
+    padding-top: 8rem;
+    display: flex;
+    justify-content: end;
+    transition: all 1s ease-in-out;
+
+    transform: translateX(100%);
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .asked-question-container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 56em) {
+  .courses-list {
+    padding: 4rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .courses-list {
+    padding: 3rem;
+    column-gap: 4rem;
+  }
+}
+
+.nav-open .main-nav {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
 }

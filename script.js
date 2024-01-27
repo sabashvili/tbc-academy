@@ -3,6 +3,10 @@ const rights = document.querySelector(".rights");
 const slides = document.querySelectorAll(".slider-item");
 const overlay = document.querySelector(".overlay");
 const rightsCloseBtn = document.querySelector(".close-btn");
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const closeMenuBtn = document.getElementById("mobile-close-btn");
+const header = document.querySelector(".main-header");
+const navBar = document.querySelector(".main-nav");
 
 document.getElementById("prevBtn").addEventListener("click", prevSlide);
 document.getElementById("nextBtn").addEventListener("click", nextSlide);
@@ -75,8 +79,6 @@ function toggleAnswer(answerId) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector(".main-header");
-
   function handleScroll() {
     if (window.scrollY > 0) {
       header.classList.add("fixed-header");
@@ -104,3 +106,19 @@ document.addEventListener("click", closeRightsBar);
 rightsCloseBtn.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
+
+mobileMenuBtn.addEventListener("click", () => {
+  header.classList.add("nav-open");
+});
+
+closeMenuBtn.addEventListener("click", () => {
+  header.classList.remove("nav-open");
+});
+
+const closeMobileNavBar = (e) => {
+  if (!mobileMenuBtn.contains(e.target) && !navBar.contains(e.target)) {
+    header.classList.remove("nav-open");
+  }
+};
+
+document.addEventListener("click", closeMobileNavBar);
