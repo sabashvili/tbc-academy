@@ -225,14 +225,14 @@
   padding: 10.5rem 0 7.5rem 0;
 }
 
-.question-header-container {
-  display: flex;
-  justify-content: space-between;
+.all-question-btn {
+  justify-self: end;
 }
 
 .question-list {
   list-style: none;
   margin-top: 1rem;
+  grid-column: 1/-1;
 }
 
 .question-item {
@@ -254,6 +254,8 @@
 .asked-question-container {
   max-width: 90rem;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .asked-question-answer {
@@ -356,7 +358,7 @@
   right: 0;
   width: 68.6rem;
   height: 100vh;
-  padding: 0 6.05rem;
+  padding: 3rem 6.05rem;
   overflow-y: scroll;
 }
 
@@ -465,14 +467,8 @@
     column-gap: 6rem;
   }
 
-  .container {
-    padding: 0 3rem;
-  }
-
-  .header-container {
-    padding: 0 3rem;
-  }
-
+  .container,
+  .header-container,
   .container-slogan {
     padding: 0 3rem;
   }
@@ -504,7 +500,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 60%;
     height: 100vh;
     padding-right: 1rem;
     padding-top: 8rem;
@@ -521,7 +517,7 @@
 
   .main-nav-list {
     flex-direction: column;
-    gap: 4.8rem;
+    gap: 4rem;
   }
 
   .nav-open .icon-mobile-nav[name="close-outline"] {
@@ -547,6 +543,103 @@
   .courses-list {
     padding: 3rem;
     column-gap: 4rem;
+  }
+
+  .rights {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 43em) {
+  .courses-list {
+    padding: 0;
+  }
+}
+
+@media (max-width: 40em) {
+  .courses-list {
+    grid-template-columns: 1fr;
+    padding: 0 12rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .courses-list {
+    padding: 0 8rem;
+  }
+
+  .about-text {
+    font-size: 1.9rem;
+  }
+
+  .section-header {
+    grid-column: 1/-1;
+  }
+
+  .all-question-btn {
+    margin-top: 4rem;
+    grid-column: 1/2;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .courses-list {
+    padding: 0 2rem;
+  }
+
+  .left-arrow-btn {
+    left: 2rem;
+  }
+
+  .right-arrow-btn {
+    right: 2rem;
+  }
+
+  .rights {
+    width: 90%;
+  }
+
+  .footer-container {
+    row-gap: 3.3rem;
+  }
+
+  .footer-tbc-logo {
+    grid-column: 1/-1;
+  }
+
+  .send-email-btn {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start !important;
+  }
+
+  .social-network {
+    justify-self: center;
+  }
+
+  .copyright-btn {
+    grid-row: 3;
+  }
+  .copyright-text {
+    grid-row: 4;
+    grid-column: 1/-1;
+  }
+
+  .container,
+  .header-container,
+  .container-slogan {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 28em) {
+  .courses-list {
+    padding: 0 1rem;
+  }
+
+  .slogan-text {
+    font-size: 3.2rem;
   }
 }
 
