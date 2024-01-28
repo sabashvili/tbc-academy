@@ -17,5 +17,5 @@
 ## Instructions
 
 1. Clone the repository: `git clone https://github.com/sabashvili/tbc-academy.git`
-2. Navigate to the project directory: `cd your-repository`
+2. Navigate to the project directory: `cd tbc-academy`
 3. Open `index.html` in your web browser.
