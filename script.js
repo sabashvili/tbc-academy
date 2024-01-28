@@ -1,3 +1,4 @@
+// Selectors
 const rightsBtn = document.getElementById("rights-btn");
 const rights = document.querySelector(".rights");
 const slides = document.querySelectorAll(".slider-item");
@@ -8,30 +9,35 @@ const closeMenuBtn = document.getElementById("mobile-close-btn");
 const header = document.querySelector(".main-header");
 const navBar = document.querySelector(".main-nav");
 
+// Event Listeners
 document.getElementById("prevBtn").addEventListener("click", prevSlide);
 document.getElementById("nextBtn").addEventListener("click", nextSlide);
-document.getElementById("page1Btn").addEventListener("click", () => gotoPage(0));
-document.getElementById("page2Btn").addEventListener("click", () => gotoPage(1));
-document.getElementById("page3Btn").addEventListener("click", () => gotoPage(2));
-document.getElementById("question1").addEventListener("click", function () {
-  toggleAnswer("answer1");
-});
-document.getElementById("question2").addEventListener("click", function () {
-  toggleAnswer("answer2");
-});
-document.getElementById("question3").addEventListener("click", function () {
-  toggleAnswer("answer3");
-});
-rightsBtn.addEventListener("click", () => toggleRight());
 
+const pageButtons = document.querySelectorAll('[id^="page"]');
+pageButtons.forEach((btn, index) => {
+  btn.addEventListener("click", () => gotoPage(index));
+});
+
+const questionButtons = document.querySelectorAll('[id^="question"]');
+questionButtons.forEach((btn, index) => {
+  btn.addEventListener("click", () => toggleAnswer(`answer${index + 1}`));
+});
+
+rightsBtn.addEventListener("click", toggleRight);
+document.addEventListener("DOMContentLoaded", handleScroll);
+document.addEventListener("click", closeRightsBar);
+rightsCloseBtn.addEventListener("click", () => overlay.classList.add("hidden"));
+mobileMenuBtn.addEventListener("click", () => header.classList.add("nav-open"));
+closeMenuBtn.addEventListener("click", () => header.classList.remove("nav-open"));
+document.addEventListener("click", closeMobileNavBar);
+
+// Functions
 let currentSlide = 0;
 const intervalTime = 3000;
 let intervalId;
 
 function showSlide(index) {
-  slides.forEach((slide) => {
-    slide.style.display = "none";
-  });
+  slides.forEach((slide) => (slide.style.display = "none"));
   slides[index].style.display = "flex";
 }
 
@@ -58,67 +64,40 @@ function resetInterval() {
   intervalId = setInterval(nextSlide, intervalTime);
 }
 
-showSlide(currentSlide);
-intervalId = setInterval(nextSlide, intervalTime);
-
 function toggleAnswer(answerId) {
-  let answer = document.getElementById(answerId);
+  const answer = document.getElementById(answerId);
+  const allAnswers = document.querySelectorAll(".asked-question-answer");
 
-  let allAnswers = document.querySelectorAll(".asked-question-answer");
   allAnswers.forEach((el) => {
-    if (el.id !== answerId) {
-      el.classList.remove("visible");
-    }
+    if (el.id !== answerId) el.classList.remove("visible");
   });
 
-  if (answer.classList.contains("visible")) {
-    answer.classList.remove("visible");
-  } else {
-    answer.classList.add("visible");
+  answer.classList.toggle("visible");
+}
+
+function handleScroll() {
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("fixed-header", window.scrollY > 0);
+  });
+}
+
+function toggleRight() {
+  overlay.classList.toggle("hidden");
+}
+
+function closeRightsBar(e) {
+  if (!rightsBtn.contains(e.target) && !rights.contains(e.target)) {
+    if (!overlay.classList.contains("hidden")) overlay.classList.add("hidden");
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  function handleScroll() {
-    if (window.scrollY > 0) {
-      header.classList.add("fixed-header");
-    } else {
-      header.classList.remove("fixed-header");
-    }
-  }
-  window.addEventListener("scroll", handleScroll);
-});
-
-const toggleRight = () => {
-  overlay.classList.toggle("hidden");
-};
-
-const closeRightsBar = (e) => {
-  if (!rightsBtn.contains(e.target) && !rights.contains(e.target)) {
-    if (!overlay.classList.contains("hidden")) {
-      overlay.classList.add("hidden");
-    }
-  }
-};
-
-document.addEventListener("click", closeRightsBar);
-
-rightsCloseBtn.addEventListener("click", () => {
-  overlay.classList.add("hidden");
-});
-
-mobileMenuBtn.addEventListener("click", () => {
-  header.classList.add("nav-open");
-});
-
-closeMenuBtn.addEventListener("click", () => {
-  header.classList.remove("nav-open");
-});
-
-const closeMobileNavBar = (e) => {
+function closeMobileNavBar(e) {
   if (!mobileMenuBtn.contains(e.target) && !navBar.contains(e.target)) {
     header.classList.remove("nav-open");
   }
-};
+}
 
-document.addEventListener("click", closeMobileNavBar);
+// Initial setup
+showSlide(currentSlide);
+intervalId = setInterval(nextSlide, intervalTime);
+handleScroll(); // Call handleScroll function to set initial header state

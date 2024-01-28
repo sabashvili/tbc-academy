@@ -520,6 +520,10 @@
     gap: 4rem;
   }
 
+  .main-nav-link {
+    font-size: 2rem !important;
+  }
+
   .nav-open .icon-mobile-nav[name="close-outline"] {
     display: block;
   }
@@ -570,6 +574,7 @@
 
   .about-text {
     font-size: 1.9rem;
+    line-height: 1.8;
   }
 
   .section-header {
@@ -580,6 +585,10 @@
     margin-top: 4rem;
     grid-column: 1/2;
     grid-row: 3;
+  }
+
+  .question {
+    font-size: 2rem !important;
   }
 }
 
@@ -606,6 +615,7 @@
 
   .footer-tbc-logo {
     grid-column: 1/-1;
+    width: 15rem;
   }
 
   .send-email-btn {
@@ -630,6 +640,10 @@
   .header-container,
   .container-slogan {
     padding: 0 2rem;
+  }
+
+  .answer {
+    font-size: 1.7rem;
   }
 }
 
